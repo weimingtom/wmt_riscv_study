@@ -110,6 +110,7 @@ spike linux研究。研究了很久勉强可以把spike跑起来
 （1）编译spike，代码库是：riscv-software-src/riscv-isa-sim。
 我用xubuntu 2004编译，没有报错，但编译出来有两三百M比较大
 （2）获取pk。这个轻量级内核可以不用自己编译，在riscv-isa-sim的发布页面中有预编译
+see also spike-ci.tar  
 （3）获取工具链，我是用平头哥T-Head的非标准交叉工具链：
 Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 （4）编译hello，因为工具链非标准需要强制用标准架构，
@@ -120,7 +121,7 @@ Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 search baidupan, xubuntu200464_spike_bakcup
 ```
 * https://github.com/camel-cdr/rvv-bench/issues/8  
-Should use --isa=rv64gcv to solve this problem    
+Should use spike --isa=rv64gcv and gcc -march=rv64gcv to solve this problem    
 
 
 
