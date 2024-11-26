@@ -97,7 +97,8 @@ https://github.com/riscv-software-src/riscv-isa-sim/issues/943
 https://cloud.tencent.com/developer/ask/sof/105236918  
 cd riscv64-elf-x86_64-20201104/bin
 ``` 
-（来源于melis的工具链）  
+（来源于melis的工具链）
+（https://github.com/sterling-teng/d1s-melis/blob/master/prebuilt/md5-x86_64-linux.txt）    
 ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c  
 (一定要加-O2，算pi太慢。因为T-HEAD的工具链，所以会变成rv64gcxthead，所以要指定march）  
 cp hello2 ../../riscv-isa-sim/ci-test2  
@@ -118,7 +119,7 @@ Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 （6）备注，可能-march的架构不用V也可以，V可能是向量特性的意思
 search baidupan, xubuntu200464_spike_bakcup
 ```
-* https://github.com/camel-cdr/rvv-bench/issues/8
+* https://github.com/camel-cdr/rvv-bench/issues/8  
 Should use --isa=rv64gcv to solve this problem    
 
 
