@@ -120,7 +120,8 @@ Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 （6）备注，可能-march的架构不用V也可以，V可能是向量特性的意思
 search baidupan, xubuntu200464_spike_bakcup
 ```
-* https://github.com/camel-cdr/rvv-bench/issues/8  
+* https://github.com/camel-cdr/rvv-bench/issues/8    
+ 'illegal instruction' when using spike  
 Should use spike --isa=rv64gcv and gcc -march=rv64gcv to solve this problem    
 
 
