@@ -94,7 +94,6 @@ https://github.com/riscv-collab/riscv-gnu-toolchain/releases
 https://aur.archlinux.org/packages/riscv-gnu-toolchain-bin  
 https://github.com/riscv-software-src/riscv-isa-sim/issues/943  
 https://cloud.tencent.com/developer/ask/sof/105236918  
-https://github.com/camel-cdr/rvv-bench/issues/8  
 cd riscv64-elf-x86_64-20201104/bin
 ``` 
 （来源于melis的工具链）  
@@ -118,7 +117,8 @@ Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 （6）备注，可能-march的架构不用V也可以，V可能是向量特性的意思
 search baidupan, xubuntu200464_spike_bakcup
 ```
-
+* https://github.com/camel-cdr/rvv-bench/issues/8
+Should use --isa=rv64gcv to solve this problem    
 
 
 
