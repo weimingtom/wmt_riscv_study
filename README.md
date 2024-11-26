@@ -52,6 +52,7 @@ sudo apt install libncurses5-dev
 ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make defconfig
 ARCH=riscv CROSS_COMPILE=riscv64-linux-gnu- make -j8
 
+(this command line see also buildroot board folder readme)  
 qemu-system-riscv64 -M virt
 -kernel arch/riscv/boot/Image
 -append "rootwait root=/dev/vda ro"
