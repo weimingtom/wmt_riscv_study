@@ -124,6 +124,39 @@ search baidupan, xubuntu200464_spike_bakcup
  'illegal instruction' when using spike  
 Should use spike --isa=rv64gcv and gcc -march=rv64gcv to solve this problem    
 
+## LiteX, include VexRiscv, KianRiscV (kianv), cv32e40p, CVA6 (Ariane), PicoRV32        
+* my weibo record
+```
+我觉得大概率FPGA跑Linux的话用35K逻辑单元就足够了，我的理由是这个：
+sipeed/TangNano-20K-example/tree/main/linux，虽然这例子不开源，
+但据说它能跑LiteX（怀疑是vexriscv，也可能是kianv，应该都不好看懂代码）。
+如果是PicoRV32的话用9K就足够了（不过PicoRV32可能不够酷炫），
+理由是这个：sipeed/TangNano-9K-example/tree/main/picotiny
 
+基于FPGA的软核RISC-V Linux，litex（实际是vexriscv软核），
+似乎也支持模拟器，命令叫做litex_sim，我不知道是不是我想的那种，
+（可能）不需要开发板就能直接模拟跑linux命令行，
+如果是的话可以考虑把它的模拟器源代码抽出来玩
+（当然有可能没那么简单），待考 ​​​
+
+《LiteX 定制 SoC 上使用 C 和 Rust 嵌入式 (RISC-V)》这东西看上去好tm酷炫，
+可以定制外设和生成sdk？（待考，可能工具链是固定的）不过我不想只知道怎么做，
+我想知道这东西的原理（以及方法论，以移植到其他架构诸如MIPS），
+所以还是慢慢来吧 ​​​
+
+少数几个知名RTOS的文档会收录关于RISC-V软核或模拟器的相关运行资料，但不一定很详细。
+（1）rt-thread有关于cv32e40p的介绍（参考：快速上手, core-v-mcu）
+（2）zephyr有关于VexRiscv（参考：Suported Boards, RISC-V Boards, LiteX VexRiscv）
+（3）nuttx有关于VexRiscv（参考：Enjoy Digital LiteX FPGA’s，类似zephyr）
+
+我查了一下，Ariane应该还是比较有名的，现在改名字叫CVA6，属于openhwgroup，
+特点就是可以跑Linux（其实我觉得能跑简单的RTOS或者Bootloader已经足够了）。
+同时litex也支持，不过能跑这个软核的FPGA应该比较高配置。
+至于openhw group，可以理解为（可能是）最大和最全面的RISC-V开源组织
+（我是不是可以说它是最权威的），所以它有各种各样类似CVA6的RISC-V工程
+```
+* https://github.com/sipeed/TangNano-20K-example/tree/main/linux  
+* https://github.com/sipeed/TangNano-9K-example/tree/main/picotiny  
+* 
 
 
