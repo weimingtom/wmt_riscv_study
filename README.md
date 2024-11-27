@@ -136,7 +136,8 @@ search baidupan, xubuntu200464_spike_bakcup
 * https://github.com/camel-cdr/rvv-bench/issues/8    
  'illegal instruction' when using spike  
 Should use spike --isa=rv64gcv and gcc -march=rv64gcv to solve this problem    
-
+* spike-ci.tar  
+https://github.com/riscv-software-src/riscv-isa-sim/releases/tag/dummy-tag-for-ci-storage  
 
 ## LiteX, include VexRiscv, KianRiscV (kianv), cv32e40p, CVA6 (Ariane), PicoRV32        
 * my weibo record
