@@ -79,6 +79,19 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 * https://www.cnblogs.com/riyuejiuzhao/p/17695170.html  
 * https://www.cnblogs.com/tadshi/p/14785635.html  
 
+## xubuntu 22 + cnlohr/mini-rv32ima-images + qemu-system-riscv32 -M virt -bios none  
+* https://github.com/cnlohr/mini-rv32ima-images/blob/master/images/linux-6.1.14-rv32nommu-cnl-1.zip  
+* qemu-system-riscv32 -M virt -bios none -kernel Image  
+```
+怎么用qemu运行risc-v的rv32版linux内核呢？
+这个其实比rv6要更容易，rv6你需要装工具链和编译内核，rv32甚至不需要这样做，
+就装qemu-system-misc软件包即可。rv32分nommu和mmu版，
+由于nommu版rv32比较多人研究跑模拟器，例如cnlohr/mini-rv32ima-images
+是已经编译好的Image文件，然后用
+qemu-system-riscv32 -M virt -bios none  -kernel Image命令运行即可
+（可以参考buildroot的说明），连BIOS opensbi都不需要
+```
+
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
 * spike --isa=rv64gcv pk hello2  
@@ -123,6 +136,7 @@ search baidupan, xubuntu200464_spike_bakcup
 * https://github.com/camel-cdr/rvv-bench/issues/8    
  'illegal instruction' when using spike  
 Should use spike --isa=rv64gcv and gcc -march=rv64gcv to solve this problem    
+
 
 ## LiteX, include VexRiscv, KianRiscV (kianv), cv32e40p, CVA6 (Ariane), PicoRV32        
 * my weibo record
