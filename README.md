@@ -195,6 +195,7 @@ make all
 * https://gitlab.com/x653/xv6-riscv-fpga  
 
 ## kianRiscV + Tang Nano 20K  
+* https://github.com/splinedrive/kianRiscV/tree/master/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K  
 * https://github.com/splinedrive/kianRiscV/tree/tangnano20k_ulinux_soc/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K  
 ```
 cd linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K
