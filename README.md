@@ -209,7 +209,7 @@ qemu-system-riscv32 -M virt -bios none -kernel Image，
 也有可能是直接复制mini-rv32ima作者编译的镜像，待考 ​​​
 ```
 
-## mit-pdos/xv6-riscv, version 2022-08-26  
+## mit-pdos/xv6-riscv, version 2022-08-26 + xubuntu 22   
 * https://github.com/mit-pdos/xv6-riscv/tree/f5b93ef12f7159f74f80f94729ee4faabe42c360  
 ```
 sudo apt install gcc-riscv64-unknown-elf libnewlib-dev qemu-system-misc
