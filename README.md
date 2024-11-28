@@ -200,4 +200,11 @@ make all
 ```
 cd linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K
 qemu-system-riscv32 -M virt -bios none -kernel Image 
+
+splinedrive/kianRiscV的分支tangnano20k_ulinux_soc里面也有
+一个预先编译好的rv32ima的Image内核文件，
+我试过也是可以用qemu跑的，例如这样：
+qemu-system-riscv32 -M virt -bios none -kernel Image，
+内核版本是6.1，不过不确定是否开源，
+也有可能是直接复制mini-rv32ima作者编译的镜像，待考 ​​​
 ```
