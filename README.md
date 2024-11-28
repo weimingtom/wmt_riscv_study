@@ -208,7 +208,8 @@ qemu-system-riscv32 -M virt -bios none -kernel Image，
 内核版本是6.1，不过不确定是否开源，
 也有可能是直接复制mini-rv32ima作者编译的镜像，待考 ​​​
 ```
-## xv6-riscv
+
+## mit-pdos/xv6-riscv, version 2022-08-26  
 * https://github.com/mit-pdos/xv6-riscv/tree/f5b93ef12f7159f74f80f94729ee4faabe42c360  
 ```
 sudo apt install gcc-riscv64-unknown-elf libnewlib-dev qemu-system-misc
@@ -223,3 +224,9 @@ qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel
 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
 ```
 * (TODO) how to gdb target remote :26000
+```
+用xubuntu 22编译运行mit-pdos/xv6-riscv。工具链用apt装-unknown-elf即可。
+gdb似乎连不上（target remote :26000），待考。
+我发现最新版编译了跑不了，不知道原因，
+所以我这里是回退到2022年8月份版本
+```
