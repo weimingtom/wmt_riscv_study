@@ -208,3 +208,18 @@ qemu-system-riscv32 -M virt -bios none -kernel Image，
 内核版本是6.1，不过不确定是否开源，
 也有可能是直接复制mini-rv32ima作者编译的镜像，待考 ​​​
 ```
+## xv6-riscv
+* https://github.com/mit-pdos/xv6-riscv/tree/f5b93ef12f7159f74f80f94729ee4faabe42c360  
+```
+sudo apt install gcc-riscv64-unknown-elf libnewlib-dev qemu-system-misc
+cd xv6-riscv-f5b93ef12f7159f74f80f94729ee4faabe42c360/
+
+TOOLPREFIX=riscv64-unknown-elf- make CPUS=1 clean qemu
+(Ctrl+A X to exit)
+
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel
+-m 128M -smp 1 -nographic -global virtio-mmio.force-legacy=false
+-drive file=fs.img,if=none,format=raw,id=x0
+-device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+```
+* (TODO) how to gdb target remote :26000
