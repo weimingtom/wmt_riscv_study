@@ -193,3 +193,6 @@ make all
 * https://github.com/darklife/darkriscv/blob/master/src/darksocv.mem
 * https://github.com/darklife/darkriscv/blob/master/rtl/darkram.v  
 * https://gitlab.com/x653/xv6-riscv-fpga  
+
+## kianRiscV + Tang Nano 20K  
+* https://github.com/splinedrive/kianRiscV/tree/tangnano20k_ulinux_soc/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K  
