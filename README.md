@@ -196,3 +196,7 @@ make all
 
 ## kianRiscV + Tang Nano 20K  
 * https://github.com/splinedrive/kianRiscV/tree/tangnano20k_ulinux_soc/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K  
+```
+cd linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K
+qemu-system-riscv32 -M virt -bios none -kernel Image 
+```
