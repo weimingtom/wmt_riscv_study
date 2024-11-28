@@ -177,6 +177,17 @@ sipeed/TangNano-20K-example/tree/main/linux，虽然这例子不开源，
 * readmemh
 * https://github.com/splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC/blob/main/test/tb.v  
 * https://github.com/splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC/blob/main/test/spiflash.v
+* https://github.com/splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC/tree/main/test  
+```
+sudo apt install python3-pip
+pip install -r requirements.txt
+. ~/.profile
+(or restart ubuntu 22 to let ~/.profile to add ~/.local/bin to PATH)
+cd test
+sudo apt install iverilog
+make clean
+make all
+```
 * https://github.com/darklife/darkriscv
 * https://github.com/darklife/darkriscv/blob/master/src/darksocv.mem
 * https://github.com/darklife/darkriscv/blob/master/rtl/darkram.v  
