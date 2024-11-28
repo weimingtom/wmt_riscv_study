@@ -174,6 +174,7 @@ sipeed/TangNano-20K-example/tree/main/linux，虽然这例子不开源，
 * https://github.com/sipeed/TangNano-9K-example/tree/main/picotiny  
 
 ## splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC  
+* cocotb, iverilog  
 * readmemh
 * https://github.com/splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC/blob/main/test/tb.v  
 * https://github.com/splinedrive/KianV-RV32IMA-RISC-V-uLinux-SoC/blob/main/test/spiflash.v
