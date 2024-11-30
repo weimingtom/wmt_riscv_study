@@ -244,10 +244,11 @@ riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14.tar.gz
 riscv-openocd-0.10.0-2020.12.1-x86_64-linux-ubuntu14.tar.gz    
 bin2hex, elf2bin, elf2hex, zspike-dasm:    
 sdk-utilities-1.0.1-2020.12.1-x86_64-linux-ubuntu14.tar.gz    
-* sifive_dev_tools_zephyr
+* sifive_dev_tools_zephyr  
 risc-v toolchain, zephyr litex vexriscv on arty board  
-https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.9.99-dev1/zephyr/boards/riscv/litex_vexriscv/doc/index.html  
-wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
-tar -xf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
-export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/  
-riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
+https://docs.zephyrproject.org/latest/boards/enjoydigital/litex_vexriscv/doc/index.html  
+https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.9.99-dev1/zephyr/boards/riscv/litex_vexriscv/doc/index.html    
+wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz    
+tar -xf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz    
+export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/    
+riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
