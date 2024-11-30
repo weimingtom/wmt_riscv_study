@@ -33,7 +33,7 @@ sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
 * https://github.com/drorgl/esp32-tinyemu  
 
 ## xubuntu 22 (don't use 20) + mmu rv64 linux-6.1.14 + qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image     
-* (don't use ubuntu 20) sudo apt install gcc-riscv64-linux-gnu  
+* (don't use ubuntu 20, use xubuntu 22) sudo apt install gcc-riscv64-linux-gnu  
 Q: how to install riscv64-unknown-elf-gcc ?   
 A: The Ubuntu 20.04 package is known to be incomplete and hence useless    
 https://github.com/riscvarchive/riscv-gcc/issues/171  
