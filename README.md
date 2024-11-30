@@ -32,7 +32,7 @@ sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
 ```
 * https://github.com/drorgl/esp32-tinyemu  
 
-## xubuntu 22 (don't use 20) + linux-6.1.14 + qemu-system-riscv64 -M virt    
+## xubuntu 22 (don't use 20) + mmu linux-6.1.14 + qemu-system-riscv64 -M virt    
 * qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image  
 * Image-6.1.14_readme.txt  
 ```
@@ -79,7 +79,7 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 * https://www.cnblogs.com/riyuejiuzhao/p/17695170.html  
 * https://www.cnblogs.com/tadshi/p/14785635.html  
 
-## xubuntu 22 + cnlohr/mini-rv32ima-images + qemu-system-riscv32 -M virt -bios none  
+## xubuntu 22 + cnlohr/mini-rv32ima-images  + nommu linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel Image    
 * https://github.com/cnlohr/mini-rv32ima-images/blob/master/images/linux-6.1.14-rv32nommu-cnl-1.zip  
 * qemu-system-riscv32 -M virt -bios none -kernel Image  
 ```
@@ -90,6 +90,42 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 是已经编译好的Image文件，然后用
 qemu-system-riscv32 -M virt -bios none  -kernel Image命令运行即可
 （可以参考buildroot的说明），连BIOS opensbi都不需要
+```
+
+## xubuntu 22 + bootlin riscv32 gcc + mmu linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel Image  
+* get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
+ https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz  
+* PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"  
+* make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- rv32_defconfig  
+* qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image  
+```
+如何编译rv32的mmu版linux内核Image文件？
+ubuntu没有提供32位的交叉工具链，
+所以一般推荐编译riscv-collab/riscv-gnu-toolchain，
+但我这里直接用toolchains.bootlin版本（架构选择riscv32-ilp32d，glibc），
+配置用rv32_defconfig（不能用defconfig），
+fw_dynamic.bin文件可以从opensbi中找到
+（share/opensbi/ilp32/generic），
+然后执行qemu：
+qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image，
+效果如下
+
+xz -d riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz
+tar xf riscv32-ilp32d--glibc--stable-2024.05-1.tar
+
+gedit ~/.profile
+PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"
+
+riscv32-buildroot-linux-gnu-gcc
+
+sudo apt install flex bison libncurses5-dev
+make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- rv32_defconfig
+(don't use defconfig)
+make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- -j8
+
+(unzip opensbi-1.5.1-rv-bin.tar.xz sbi-1.5.1-rv-bin/share/opensbi/ilp32/generic/fw_dynamic.bin to ~/work_rv32/linux-6.1.14)
+
+qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image
 ```
 
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
