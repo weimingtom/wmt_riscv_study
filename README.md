@@ -230,3 +230,24 @@ gdb似乎连不上（target remote :26000），待考。
 我发现最新版编译了跑不了，不知道原因，
 所以我这里是回退到2022年8月份版本
 ```
+
+## Linux 6.1.14-rv32ima On Scratch.sb3  
+* https://scratch.mit.edu/projects/892602496
+
+## sifive prebuilt riscv64-unknown-elf-gcc, 2019 (gcc 8.1.0) and 2020 (gcc 10.2.0)    
+* work_spike_linux
+* freedom-tools
+https://riscv.org/news/2021/07/video-spike-proxy-kernel-from-source-to-hello-world-danny-pratama/  
+https://www.youtube.com/watch?v=sPvMXGFTC2U  
+https://github.com/sifive/freedom-tools/releases/tag/v2020.12.0   
+riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14.tar.gz  
+riscv-openocd-0.10.0-2020.12.1-x86_64-linux-ubuntu14.tar.gz  
+bin2hex, elf2bin, elf2hex, zspike-dasm:   
+sdk-utilities-1.0.1-2020.12.1-x86_64-linux-ubuntu14.tar.gz  
+* sifive_dev_tools_zephyr
+risc-v toolchain, zephyr litex vexriscv on arty board  
+https://developer.nordicsemi.com/nRF_Connect_SDK/doc/1.9.99-dev1/zephyr/boards/riscv/litex_vexriscv/doc/index.html  
+wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
+tar -xf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
+export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/  
+riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
