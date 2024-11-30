@@ -32,7 +32,7 @@ sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
 ```
 * https://github.com/drorgl/esp32-tinyemu  
 
-## xubuntu 22 (don't use 20) + mmu linux-6.1.14 + qemu-system-riscv64 -M virt    
+## xubuntu 22 (don't use 20) + mmu rv64 linux-6.1.14 + qemu-system-riscv64 -M virt    
 * qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image  
 * Image-6.1.14_readme.txt  
 ```
@@ -79,7 +79,7 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 * https://www.cnblogs.com/riyuejiuzhao/p/17695170.html  
 * https://www.cnblogs.com/tadshi/p/14785635.html  
 
-## xubuntu 22 + cnlohr/mini-rv32ima-images  + nommu linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel Image    
+## xubuntu 22 + cnlohr/mini-rv32ima-images + nommu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel Image    
 * https://github.com/cnlohr/mini-rv32ima-images/blob/master/images/linux-6.1.14-rv32nommu-cnl-1.zip  
 * qemu-system-riscv32 -M virt -bios none -kernel Image  
 ```
@@ -92,7 +92,7 @@ qemu-system-riscv32 -M virt -bios none  -kernel Image命令运行即可
 （可以参考buildroot的说明），连BIOS opensbi都不需要
 ```
 
-## xubuntu 22 + bootlin riscv32 gcc + mmu linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel Image  
+## xubuntu 22 + bootlin riscv32 gcc + mmu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel Image  
 * get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
  https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz  
 * PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"    
@@ -129,6 +129,23 @@ make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- -j8
 
 qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image
 ```
+* 构建RISC-V工作环境  
+https://twd2.me/archives/13406  
+* Spike模拟Linux 5.3教程  
+https://cnrv.io/articles/spike-linux  
+* BBL : Berkeley Boot Loader  
+https://github.com/riscv-software-src/riscv-pk  
+* 【博文精选】eclipse联和DGB在qemu平台调试riscv linux  
+https://www.163.com/dy/article/EF89QAOI0512EO4N.html  
+RISC-V篇-qemu+gdb调试Linux kernel源码   
+https://blog.csdn.net/u010826758/article/details/143319443  
+* Juraj's Blog, Building up a RISC-V Linux with Buildroot  
+https://jborza.com/post/2020-04-08-riscv-environment/  
+* https://sources.buildroot.net/riscv-isa-sim/  
+* Running 64- and 32-bit RISC-V Linux on QEMU  
+https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-qemu.html  
+* riscv gcc工具链是如何被编译的
+https://zhuanlan.zhihu.com/p/567254343  
 
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
