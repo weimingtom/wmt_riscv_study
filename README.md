@@ -33,6 +33,10 @@ sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
 * https://github.com/drorgl/esp32-tinyemu  
 
 ## xubuntu 22 (don't use 20) + mmu rv64 linux-6.1.14 + qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image     
+* (don't use ubuntu 20) sudo apt install gcc-riscv64-linux-gnu  
+how to install riscv64-unknown-elf-gcc  
+- The Ubuntu 20.04 package is known to be incomplete and hence useless  
+https://github.com/riscvarchive/riscv-gcc/issues/171  
 * qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image  
 * Image-6.1.14_readme.txt  
 ```
@@ -146,6 +150,8 @@ https://jborza.com/post/2020-04-08-riscv-environment/
 https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-qemu.html  
 * riscv gcc工具链是如何被编译的    
 https://zhuanlan.zhihu.com/p/567254343    
+* How to install riscv32-unknown-elf-gcc on Debian-based Linuxes  
+https://stackoverflow.com/questions/74231514/how-to-install-riscv32-unknown-elf-gcc-on-debian-based-linuxes
 
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
