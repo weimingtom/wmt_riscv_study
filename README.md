@@ -32,7 +32,7 @@ sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
 ```
 * https://github.com/drorgl/esp32-tinyemu  
 
-## xubuntu 22 (don't use 20) + mmu rv64 linux-6.1.14 + qemu-system-riscv64 -M virt    
+## xubuntu 22 (don't use 20) + mmu rv64 linux-6.1.14 + qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image     
 * qemu-system-riscv64 -M virt -kernel arch/riscv/boot/Image  
 * Image-6.1.14_readme.txt  
 ```
@@ -79,7 +79,7 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 * https://www.cnblogs.com/riyuejiuzhao/p/17695170.html  
 * https://www.cnblogs.com/tadshi/p/14785635.html  
 
-## xubuntu 22 + cnlohr/mini-rv32ima-images + nommu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel Image    
+## xubuntu 22 + prebuilt cnlohr/mini-rv32ima-images + nommu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image      
 * https://github.com/cnlohr/mini-rv32ima-images/blob/master/images/linux-6.1.14-rv32nommu-cnl-1.zip  
 * qemu-system-riscv32 -M virt -bios none -kernel Image  
 ```
@@ -92,7 +92,7 @@ qemu-system-riscv32 -M virt -bios none  -kernel Image命令运行即可
 （可以参考buildroot的说明），连BIOS opensbi都不需要
 ```
 
-## xubuntu 22 + bootlin riscv32 gcc + mmu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel Image  
+## xubuntu 22 + prebuilt bootlin rv32-ilp32d gcc + mmu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image    
 * get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
  https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz  
 * PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"    
