@@ -144,8 +144,8 @@ https://jborza.com/post/2020-04-08-riscv-environment/
 * https://sources.buildroot.net/riscv-isa-sim/  
 * Running 64- and 32-bit RISC-V Linux on QEMU  
 https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-qemu.html  
-* riscv gcc工具链是如何被编译的
-https://zhuanlan.zhihu.com/p/567254343  
+* riscv gcc工具链是如何被编译的    
+https://zhuanlan.zhihu.com/p/567254343    
 
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
