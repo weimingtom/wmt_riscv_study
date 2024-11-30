@@ -95,8 +95,10 @@ qemu-system-riscv32 -M virt -bios none  -kernel Image命令运行即可
 ## xubuntu 22 + bootlin riscv32 gcc + mmu linux-6.1.14 + qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel Image  
 * get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
  https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz  
-* PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"  
+* PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"    
 * make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- rv32_defconfig  
+* https://github.com/riscv-software-src/opensbi/releases/tag/v1.5.1  
+https://github.com/riscv-software-src/opensbi/releases/download/v1.5.1/opensbi-1.5.1-rv-bin.tar.xz  
 * qemu-system-riscv32 -M virt -bios fw_dynamic.bin -kernel arch/riscv/boot/Image  
 ```
 如何编译rv32的mmu版linux内核Image文件？
