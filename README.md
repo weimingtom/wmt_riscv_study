@@ -85,7 +85,7 @@ qemu-system-riscv64 -M sifive_u -kernel arch/riscv/boot/Image
 
 ## xubuntu 22 + prebuilt cnlohr/mini-rv32ima-images + nommu rv32 linux-6.1.14 + qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image      
 * https://github.com/cnlohr/mini-rv32ima-images/blob/master/images/linux-6.1.14-rv32nommu-cnl-1.zip  
-* qemu-system-riscv32 -M virt -bios none -kernel Image  
+* qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image    
 ```
 怎么用qemu运行risc-v的rv32版linux内核呢？
 这个其实比rv6要更容易，rv6你需要装工具链和编译内核，rv32甚至不需要这样做，
