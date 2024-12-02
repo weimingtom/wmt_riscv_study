@@ -153,6 +153,72 @@ https://zhuanlan.zhihu.com/p/567254343
 * How to install riscv32-unknown-elf-gcc on Debian-based Linuxes  
 https://stackoverflow.com/questions/74231514/how-to-install-riscv32-unknown-elf-gcc-on-debian-based-linuxes
 
+## xubuntu 22 + nommu linux-6.8 (don't use linux-6.1.14) + qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image        
+* get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
+ https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz   
+* PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"  
+* nommu_rv32_defconfig (add CONFIG_ARCH_RV32I=y and CONFIG_32BIT=y to the top of nommu_virt_defconfig)    
+make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- nommu_rv32_defconfig  
+```
+copy nommu_virt_defconfig to nommu_rv32_defconfig
+add to top
+CONFIG_ARCH_RV32I=y
+CONFIG_32BIT=y
+
+make sure .config:
+remove defconfig INITRAMFS
+dont' see CONFIG_MMU=y
+dont' see CONFIG_NONPORTABLE=y
+
+sudo apt install flex bison libncurses5-dev
+make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- nommu_rv32_defconfig
+make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- -j8
+qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image 
+
+############################
+/arch/risc/Kconfig
+if ARCH_RV32I = true, MMU = true
+
+config ARCH_RV32I
+	bool "RV32I"
+	depends on NONPORTABLE
+	select 32BIT
+	select GENERIC_LIB_ASHLDI3
+	select GENERIC_LIB_ASHRDI3
+	select GENERIC_LIB_LSHRDI3
+	select GENERIC_LIB_UCMPDI2
+	select MMU
+	
+see https://github.com/tvlad1234/linux-ch32v003
+6.8-rc1 remove this ? 
+don't use 6.1.14, use 6.8 instead
+
+https://github.com/cnlohr/mini-rv32ima-images/tree/master/images
+https://cdn.kernel.org/pub/linux/kernel/v6.x/
+############################
+```
+* weibo record
+```
+编译运行risc-v rv32 nommu linux成功，这样就可以不用cnlohr/mini-rv32ima-images
+的预编译内核Image也能自己编译出来。
+不过这个过程有点绕，因为Linux有一些版本会判断是否编译RV32I这个ISA架构，
+如果是的话会强制打开MMU，所以正确的做法不能用linux-6.1，
+我这里用的是linux-6.8的代码，复制nommu_virt_defconfig到nommu_rv32_defconfig，
+然后在配置开头加上：CONFIG_ARCH_RV32I=y和CONFIG_32BIT=y即可，
+编译后执行qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image ，
+然后切换到qemu的serial0输出效果如下。暂时还没测试mini-rv32ima是否也能正常跑
+（补注：mini-rv32ima无法模拟运行这个Image）
+
+其实Linux 6内核源码里面有关于k210的nommu defconfig，
+能否用这个默认配置去编译rv32 nommu linux？
+我怀疑不行，因为这个可能不是对应rv32i isa架构的，
+不过我没实际试验过——我试验过旧版本的linux会出现编译失败的情况，
+就是说如果要编译K210的nommu用了32位目标的交叉工具链很可能会失败，
+所以最好还是自己另外创建一个virt默认配置
+```
+* rv32_nommu_linux_build
+* linux-6.8.tar.gz
+
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
 * spike --isa=rv64gcv pk hello2  
