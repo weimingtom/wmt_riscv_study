@@ -153,13 +153,16 @@ https://zhuanlan.zhihu.com/p/567254343
 * How to install riscv32-unknown-elf-gcc on Debian-based Linuxes  
 https://stackoverflow.com/questions/74231514/how-to-install-riscv32-unknown-elf-gcc-on-debian-based-linuxes
 
-## xubuntu 22 + nommu linux-6.8 (don't use linux-6.1.14) + qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image        
+## xubuntu 22 + prebuilt bootlin rv32-ilp32d gcc + nommu rv32 linux-6.8 (don't use linux-6.1.14) + qemu-system-riscv32 -M virt -bios none -kernel arch/riscv/boot/Image        
 * get riscv32-ilp32d--glibc--stable-2024.05-1 from https://toolchains.bootlin.com  
  https://toolchains.bootlin.com/downloads/releases/toolchains/riscv32-ilp32d/tarballs/riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz   
 * PATH="/home/wmt/work_rv32/riscv32-ilp32d--glibc--stable-2024.05-1/bin:$PATH"  
 * nommu_rv32_defconfig (add CONFIG_ARCH_RV32I=y and CONFIG_32BIT=y to the top of nommu_virt_defconfig)    
 make ARCH=riscv CROSS_COMPILE=riscv32-buildroot-linux-gnu- nommu_rv32_defconfig  
 ```
+xz -d riscv32-ilp32d--glibc--stable-2024.05-1.tar.xz   
+tar xf riscv32-ilp32d--glibc--stable-2024.05-1.tar  
+
 copy nommu_virt_defconfig to nommu_rv32_defconfig
 add to top
 CONFIG_ARCH_RV32I=y
