@@ -382,3 +382,20 @@ wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.1.0-2019.
 tar -xf riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz    
 export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14/bin/    
 riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
+
+## (Failed, TODO) RV32 version XV6  
+* xv6_failed.tar.gz
+* rv32_xv6_build
+```
+目前编译的rv32版的xv6均无法模拟运行，除了splinedrive_kianRiscV-master.zip
+里面的xv6勉强能用mini-rv32ima运行了开头的串口输出
+
+其实我想试试用某种方式运行gh上那些rv32版的xv6（它原版不是支持rv32而是支持rv），
+不过没成功（最接近的程度是能跑最开头的串口输出），
+好吧，这已经超出我的能力范围，等以后再研究了（有生之年）
+```
+
+## What different from many combinations about -march=xxx and -mabi=xxx and -mcmodel=medany, "" and f and d    
+* https://blog.csdn.net/qq_43493425/article/details/131066874
+* https://blog.csdn.net/tugouxp/article/details/106567972
+* https://blog.csdn.net/qq_39507748/article/details/115347636
