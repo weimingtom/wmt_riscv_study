@@ -394,6 +394,8 @@ riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz
 不过没成功（最接近的程度是能跑最开头的串口输出），
 好吧，这已经超出我的能力范围，等以后再研究了（有生之年）
 ```
+* (good ?) https://github.com/federicorichter/rv32i_xv6  
+Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code changes very much  
 
 ## What different from many combinations about -march=xxx and -mabi=xxx and -mcmodel=medany, "" and f and d    
 * https://blog.csdn.net/qq_43493425/article/details/131066874
