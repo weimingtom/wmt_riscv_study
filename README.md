@@ -404,7 +404,11 @@ Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code chang
 * https://blog.csdn.net/qq_39507748/article/details/115347636
 
 ## TangNano20K run RISC-V rv32 Linux with kianVLinuxRiscvSocTangNano20K.bin  
-* https://github.com/splinedrive/kianRiscV/tree/master/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K    
+* https://github.com/splinedrive/kianRiscV/tree/master/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K  
+* Gowin Programmer->External Flash Mode (and next combo box choose first item)  
+->choose file to burn : 'kianVLinuxRiscvSocTangNano20K.bin' (I use master branch one)  
+* And then use putty to connect TangNano20K's usb-c uart,  
+* Command prompt is very slow (maybe because systick is too slow)  
 ```
 我找到另外一种方法用TangNano20K运行RISC-V rv32 Linux，
 而官方提供的串口litex_term启动linux似乎没成功。
@@ -416,13 +420,17 @@ Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code chang
 
 Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 波特率2000000
+文件选择kianVLinuxRiscvSocTangNano20K.bin
+（可以选master分支中的bin，其他分支可能也有这个文件，但似乎不同，我测试用的是master分支的）
 ```
 * https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU  
 
 ## Use linux-on-litex-vexriscv sim.py (not litex_sim) to run rv32 linux (cpu-type is vexriscv_smp), booting in about 30 minutes     
 * https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/sim.py  
-* https://github.com/enjoy-digital/litex/wiki
-* 安装教程：wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
+if use pip3 install litex and use litex_sim, I fail, so I use this way instead  
+* (I didn't use this method, litex dev env) https://github.com/enjoy-digital/litex/wiki
+* (I didn't use this method, litex dev env) wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
+* https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU    
 ```
 https://github.com/litex-hub/linux-on-litex-vexriscv/issues/164
 (xubuntu200464)
