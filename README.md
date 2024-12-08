@@ -401,3 +401,19 @@ Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code chang
 * https://blog.csdn.net/qq_43493425/article/details/131066874
 * https://blog.csdn.net/tugouxp/article/details/106567972
 * https://blog.csdn.net/qq_39507748/article/details/115347636
+
+## TangNano20K run RISC-V rv32 Linux with kianVLinuxRiscvSocTangNano20K.bin  
+* https://github.com/splinedrive/kianRiscV/tree/master/linux_socs/kianv_harris_mcycle_edition/demo/tangNano20K    
+```
+我找到另外一种方法用TangNano20K运行RISC-V rv32 Linux，
+而官方提供的串口litex_term启动linux似乎没成功。
+我的方法是这样，通过固化exFlash方式烧录kianVLinuxRiscvSocTangNano20K.bin
+（参考splinedrive/kianRiscV），然后通过串口连上去（例如我用putty），
+波特率是2000000，然后就能看到控制台了，不过烧录很慢和输入也比较卡（键盘按下去回显会延迟），
+估计软核的时钟频率不够高（时钟慢的话Linux的输入也会卡，这是避免不了的，
+因为Linux内核非常依靠高速的systick，输入也需要）
+
+Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
+波特率2000000
+```
+
