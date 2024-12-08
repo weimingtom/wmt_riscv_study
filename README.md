@@ -416,4 +416,4 @@ Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code chang
 Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 波特率2000000
 ```
-
+* https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU  
