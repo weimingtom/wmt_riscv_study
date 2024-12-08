@@ -461,4 +461,30 @@ xubuntu20下用sim.py运行riscv rv32 linux的效果（可能是模拟在sdram�
 安装环境也很麻烦（我没用litex_setup），可能是基于verilator，
 而且需要gcc去实时编译一些库，所以需要占用较大的硬盘
 ```
-
+* (not good) litex_sim is installed by 'pip3 install litex'  
+* sim.py is installed by https://github.com/litex-hub/linux-on-litex-vexriscv,  
+put boot.json and other files to images/,    
+see https://github.com/litex-hub/linux-on-litex-vexriscv/issues/164  
+* refs  
+```
+litex, buildroot， litex_sim 模拟器
+https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-avalanche.html
+https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU
+0001-Add-Litex-VexRiscv-support.patch
+https://colatkinson.site/linux/riscv/2021/01/27/riscv-qemu/
+https://www.qemu.org/docs/master/system/target-riscv.html​
+https://yjdwbj.github.io/2021/10/12/XILINX-Arty-A7-35T实践指南/
+https://www.rs-online.com/designspark/arty-100trisc-v-1-cn
+make BSP=metal PROGRAM=hello TARGET=freedom-e310-arty software, see https://yjdwbj.github.io/2021/10/12/XILINX-Arty-A7-35T实践指南/
+https://github.com/sifive/freedom-e-sdk
+https://msyksphinz.hatenablog.com/?page=1542308400
+https://github.com/eugene-tarassov/vivado-risc-v/blob/master/qemu/boot_qemu.sh
+https://github.com/kalray/barebox/blob/main/Documentation/boards/riscv.rst​
+https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/buildroot/board/litex_vexriscv/linux.config​
+https://github.com/enjoy-digital/litex
+https://github.com/timvideos/litex-buildenv​
+https://github.com/enjoy-digital/litex/blob/master/litex/tools/litex_sim.py
+https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/sim.py
+https://github.com/enjoy-digital/litex/wiki
+安装教程：wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
+```
