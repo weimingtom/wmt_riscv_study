@@ -488,3 +488,10 @@ https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/sim.py
 https://github.com/enjoy-digital/litex/wiki
 安装教程：wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
 ```
+
+## xv6 lisp v6  
+* https://gitlab.com/x653/xv6-riscv-fpga/-/blob/main/xv6-riscv/user/lisp.c?ref_type=heads  
+* https://github.com/x653/xv6-riscv-fpga/blob/main/xv6-riscv/user/lisp.c  
+* https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/fib  
+* https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/1-examples  
+* https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/lisp.c  
