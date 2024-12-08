@@ -408,8 +408,8 @@ Seems to run with ubuntu 22 and qemu-system-riscv32 successfully, but code chang
 * Gowin Programmer -> right mouse click menu to the list box to configure  
 -> Choose the second item: External Flash Mode (and next combo box choose first item)    
 ->choose file to burn : 'kianVLinuxRiscvSocTangNano20K.bin' (I use master branch one)    
-* And then use putty to connect TangNano20K's usb-c uart,  
-* Command prompt is very slow (maybe because systick is too slow)  
+* And then use putty to connect TangNano20K's usb-c uart, baud rate is 2000000   
+* Command prompt is a little slow (maybe because systick is too slow)  
 ```
 我找到另外一种方法用TangNano20K运行RISC-V rv32 Linux，
 而官方提供的串口litex_term启动linux似乎没成功。
