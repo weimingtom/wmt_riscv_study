@@ -17,7 +17,8 @@ My RISC-V study
 
 ## asfdrwe/ASFRV32I  
 * https://github.com/asfdrwe/ASFRV32I  
-* 可以用iverilog运行的RV32I简单软核  
+* 可以用iverilog运行的RV32I简单软核
+* (TODO) verilator ???  
 
 ## tinyemu  
 * https://bellard.org/tinyemu/
