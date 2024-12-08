@@ -417,3 +417,47 @@ Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 波特率2000000
 ```
 * https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU  
+
+## Use linux-on-litex-vexriscv sim.py (not litex_sim) to run rv32 linux (cpu-type is vexriscv_smp), booting in about 30 minutes     
+* https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/sim.py  
+* https://github.com/enjoy-digital/litex/wiki
+* 安装教程：wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex_setup.py
+```
+https://github.com/litex-hub/linux-on-litex-vexriscv/issues/164
+(xubuntu200464)
+pip3 install litex
+pip3 install litedram
+pip3 install liteeth
+pip3 install litescope
+pip3 install git+https://github.com/litex-hub/pythondata-cpu-vexriscv.git
+pip3 install git+https://github.com/litex-hub/pythondata-cpu-vexriscv_smp.git
+sudo apt install gcc-riscv64-linux-gnu
+pip3 install git+https://github.com/litex-hub/pythondata-software-picolibc.git
+pip3 install git+https://github.com/litex-hub/pythondata-software-compiler_rt.git
+​sudo apt install meson
+pip3 install git+https://github.com/litex-hub/pythondata-misc-tapcfg.git
+sudo apt install verilator
+event2
+sudo apt install libevent-dev libjson-c-dev device-tree-compiler
+pip3 install -i https://mirrors.aliyun.com/pypi/simple vcd
+https://github.com/enjoy-digital/litex/issues/1986
+FIXME:怎么离线安装这个东西（模拟器离线化）
+(--sdram-data-width=32 --trace)
+(not good, boot failed) litex_sim --with-sdram --sdram-init boot.json --cpu-type=vexriscv_smp
+https://github.com/SpinalHDL/NaxRiscv/blob/1c50e84d9a6f7ea93d7153f12906c25552267b9d/src/main/scala/naxriscv/platform/litex/NaxGen.scala#L29
+​如果用带参数的litex_sim会运行失败
+但用litex-hub/linux-on-litex-vexriscv的sim.py就可以了
+
+litex_sim --cpu-type=vexriscv
+https://blog.csdn.net/vacajk/article/details/141282633
+qemu sdram 4000_0000 ???
+https://zhuanlan.zhihu.com/p/631811875
+
+xubuntu20下用sim.py运行riscv rv32 linux的效果（可能是模拟在sdram中），非常卡，
+大概需要半小时才能完全启动看到命令行。似乎不能用litex_sim，只能用sim.py
+（参考litex-hub/linux-on-litex-vexriscv），
+而且可能只支持模拟vexriscv_smp这个目标板的linux。
+安装环境也很麻烦（我没用litex_setup），可能是基于verilator，
+而且需要gcc去实时编译一些库，所以需要占用较大的硬盘
+```
+
