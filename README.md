@@ -707,6 +707,68 @@ tvlad1234/linux-ch32v003研究，我大概总结出这样的规律：
 另外我测试过信泰微的蓝色TF转接板不能用（带AMS1117-3.3和一个14脚chip），
 但另一家的绿色SD/TF双用转接板和单tf转接板却可以，
 费解，可能明确标记3.3V的tf转接板比较可靠
+
+
+
+https://github.com/ElectroBoy404NotFound/pico-linux
+https://github.com/ElectroBoy404NotFound/pico-uMIPS/tree/main
+https://dmitry.gr/?r=05.Projects&proj=33.%20LinuxCard
+https://github.com/ElectroBoy404NotFound/uMIPS/tree/main
+https://github.com/ElectroBoy404NotFound/uARM
+https://github.com/ElectroBoy404NotFound/BluePill-RV32IMA
+https://github.com/drorgl/esp32-tinyemu
+
+tinyemu用法：risc-v模拟器，类似pk,spike
+https://bellard.org/tinyemu/
+https://bellard.org/tinyemu/buildroot.html
+* temu buildroot-riscv32.cfg
+* Log in as root with an empty password.
+search baidupan, tinyemu-2019-12-21.tar
+tinyemu在xubuntu22上的编译运行效果如下。虽然tinyemu名字叫tiny但编译需要用到
+sudo apt install libcurl4-openssl-dev libsdl1.2-dev。
+另外固件是预先提供的（root固件编译好但buildroot需要自己编译），
+所以实际上只能这样：./temu ../diskimage-linux-riscv-2018-09-23/root-riscv32.cfg，
+并且这份代码已经较长时间没更新了
+
+
+
+
+（IMP）TODO
+search baidupan, work_rv32
+asfdrwe_ASFRV32I-master.zip
+ASFRV32I的可运行版本：iverilog_windows_v1.rar
+我研究软核的计划是这样：软件用iverilog模拟，硬件用tang nano 20k模拟。
+iverilog我以前试过这个简单软核是可运行的：asfdrwe/ASFRV32I。
+我希望以此为基础尝试跑通一个baremetal程序，更进一步看能否跑通linux内核
+（可能有人做这方面的尝试，但可能并不多或者没有）。
+如果实在不行只能用tang nano 20k一步一步搭建了
+https://github.com/asfdrwe/ASFRV32I
+https://github.com/riscv-software-src/riscv-tests
+(TODO) 用iverilog输出串口linux
+https://twitter.com/regymm0/status/1629501775828123649
+https://github.com/regymm/quasiSoC/tree/master
+https://github.com/regymm/quasiSoC/blob/master/sim/sim_main.cpp
+https://github.com/regymm/quasiSoC/blob/master/Simulation.md
+转推，有人尝试过用iverilog或类似的方法（Verilator？）
+模拟FPGA软核运行linux成功，我觉得这个思路可以尝试，
+至少有人成功运行起来。它说的8M RAM就能运行也和tvlad1234/linux-ch32v003的模拟情况是一致的
+https://dmitry.gr/?r=05.Projects&proj=07.%20Linux%20on%208bit
+github.com/xniine/rocket-integration
+
+
+
+xv6 fpga
+https://github.com/x653/xv6-riscv-fpga
+https://twitter.com/splinedrive/status/1786847131157893311
+https://gitlab.com/x653/xv6-riscv-fpga/-/tree/main?ref_type=heads
+https://gitee.com/weimingtom2000/xv6-riscv-fpga
+(TODO)
+关于x653/xv6-riscv-fpga，2023年的时候有人用此项目成功在FPGA上用RISC-V软核（RV32ia zicsr）运行xv6。
+虽然还有Linux和一些RTOS也支持risc-v，不过xv6原本不是适配RV32的，这里似乎改动过，
+而且xv6原本基于qemu模拟运行，其实可以简化（qemu过于重量级），
+所以这个项目有研究的价值，待考未实际试验
+
+
 ```
 
 
