@@ -518,8 +518,9 @@ https://github.com/enjoy-digital/litex/wiki
 * http://www.riscvbook.com/chinese/RISC-V-Reader-Chinese-v2p1.pdf  
 * http://www.riscvbook.com  
 * http://www.riscvbook.com/greencard-20181213.pdf  
+
+## Computer Organization and Design RISC-V Edition, Edition 1  
 * https://educate.elsevier.com/book/details/9780128122754  
-* Computer Organization and Design RISC-V Edition, Edition 1  
 
 ## KianV  
 * https://github.com/splinedrive/kianRiscV  
@@ -560,4 +561,22 @@ pk=bbl, like opensbi
 其实就是bbl，即Berkeley Boot Loader，
 就是说pk=bbl，对标于opensbi
 see https://github.com/michaeljclark/busybear-linux
+```
+
+## FemtoRV  
+```
+FemtoRV
+https://github.com/BrunoLevy/learn-fpga
+基于STM32+iCE40的电赛训练平台完成RISC-V软核的移植
+https://www.eetree.cn/project/detail/1510
+https://github.com/mortbopet/Ripes
+RISC-V处理器的设计与实现（一）—— 基本指令集
+https://blog.csdn.net/qq_51103378/article/details/131201501
+==
+https://twitter.com/Ruinland_Mask/status/1341761899650662400
+https://github.com/Lingrui98/RISC-V-book
+https://riscv.org/technical/specifications/
+WebRISC-V
+https://github.com/Mariotti94/WebRISC-V
+https://webriscv.altervista.org
 ```
