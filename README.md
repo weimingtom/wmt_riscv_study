@@ -263,6 +263,14 @@ Tina-Linux/d1s-melis的riscv64-elf-x86_64-20201104
 （5）运行：需要指定isa或者忽略：spike --isa=rv64gcv pk hello2
 （6）备注，可能-march的架构不用V也可以，V可能是向量特性的意思
 search baidupan, xubuntu200464_spike_bakcup
+
+spike linux研究。实际上spike的gh仓库riscv-software-src/riscv-isa-sim的说明文档，
+还有油管上的教学视频，都有非常大的参考价值，甚至连工具链和bare-metal的写法和linker script写法，
+调试方法都有。具体我后面再逐个讨论，不过我觉得调试工具的用法可以延申到其他架构的研究方法论，
+但实际操作我觉得太繁琐了，尤其是openocd+gdb。
+不过其他调试方法诸如-l日志和-d交互调试我觉得非常值得其他架构借鉴。
+不过spike文档关于调试的内容基本上是基于C的，我认为最好还是用汇编，
+这样会清晰很多
 ```
 * https://github.com/camel-cdr/rvv-bench/issues/8    
  'illegal instruction' when using spike  
