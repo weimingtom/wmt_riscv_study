@@ -504,3 +504,17 @@ https://github.com/enjoy-digital/litex/wiki
 * https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/fib  
 * https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/1-examples  
 * https://github.com/x653/xv6-riscv-fpga/blob/main/lisp/lisp.c  
+
+## The RISC-V Reader: An Open Architecture Atlas  
+* http://www.riscvbook.com/chinese/RISC-V-Reader-Chinese-v2p1.pdf  
+* http://www.riscvbook.com  
+* http://www.riscvbook.com/greencard-20181213.pdf  
+* https://educate.elsevier.com/book/details/9780128122754  
+* Computer Organization and Design RISC-V Edition, Edition 1  
+
+## KianV  
+https://github.com/splinedrive/kianRiscV  
+https://github.com/splinedrive/kianRiscV/tree/master/archive/first_cpu  
+https://scrapbox.io/htkymtks/RISC-V  
+risc-v  
+https://github.com/renode/renode/tree/master  
