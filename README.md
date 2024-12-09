@@ -530,3 +530,34 @@ https://github.com/enjoy-digital/litex/wiki
 
 ## renode  
 * https://github.com/renode/renode  
+
+## LiteX 定制 SoC 上使用 C 和 Rust 嵌入式 (RISC-V)  
+```
+LiteX 定制 SoC 上使用 C 和 Rust 嵌入式 (RISC-V)
+https://zhuanlan.zhihu.com/p/598689675
+与本项目配套的设计文档《从零开始写RISC-V处理器》，已经更新完成。
+https://gitee.com/liangkangnan/tinyriscv
+https://gitee.com/xshadower/riscv-fpga-toolchain?_from=gitee_search
+https://gitee.com/liangkangnan
+https://gitee.com/liangkangnan/deep_in_riscv_debug
+https://liangkangnan.gitee.io/2020/04/29/从零开始写RISC-V处理器/
+```
+
+## risc-v linux  
+```
+https://github.com/cyyself/cemu/blob/master/docs/riscv64-linux.md
+构建RISC-V工作环境
+https://twd2.me/archives/13406
+https://www.cnx-software.com/2018/03/16/how-to-run-linux-on-risc-v-with-qemu-emulator/
+pk=bbl, like opensbi
+
+其实都不用我研究，直接就有一篇文章讲怎么用模拟器（不过是用qemu而不是spike）
+运行risc-v linux：《构建RISC-V工作环境》（出自twd2.me，Wandai Blog）
+。它的思路和MIPS不太一样，需要先编译linux kernel内核文件，
+然后用opensbi或pk在编译的时候通过payload参数包住这个内核，
+最后用qemu -kernel参数启动bbl(=pk)或opensbi这个bootloader（内容已经包括了linux内核）。
+然后我看了这篇的引用文章才发现pk（proxy kernel）
+其实就是bbl，即Berkeley Boot Loader，
+就是说pk=bbl，对标于opensbi
+see https://github.com/michaeljclark/busybear-linux
+```
