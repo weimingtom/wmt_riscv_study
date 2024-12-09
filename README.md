@@ -615,4 +615,98 @@ https://github.com/Mariotti94/WebRISC-V
 https://webriscv.altervista.org
 ```
 
+## risc-v linux emulator   
+```
+我试验过，现在用ubuntu22应该比较容易跑mit-pdos/xv6-riscv了，不需要自己编译或者找riscv工具链，
+方法是sudo apt install gcc-riscv64-unknown-elf libnewlib-dev qemu-system-misc即可。
+但ubuntu22跑mit-pdos/xv6-public估计不行，要用32位比较好，例如ubuntu14
+
+https://github.com/xhackerustc/uc-rv32ima
+
+linux-ch32v003_mingw_v2.7z
+跑通了mingw上
+https://github.com/tvlad1234/linux-ch32v003
+port mini-rv32ima.h
+记录到wmt_uclinux_study
+https://github.com/weimingtom/wmt_simulator_study
+???
+https://github.com/Its-Jakey/mini-rv32ima-Java
+https://github.com/cnlohr/mini-rv32ima-images/tree/master/images
+???
+https://github.com/ElectroBoy404NotFound/ESP32-rv32-emu
+juicevm
+https://whycan.com/t_6899.html
+https://github.com/juiceRv/JuiceVm
+https://github.com/juiceRv/kernel_juicevm_port
+
+https://github.com/cnlohr/mini-rv32ima  
+有大量关于risc-v编译的资料
+cd mini-rv32ima
+make testdlimage
+./mini-rv32ima -f DownloadedImage
+
+
+
+
+temu
+https://github.com/Low-Speed-Linux-Experimental-Platform/temu
+https://www.bilibili.com/video/BV1s2421P7rZ  
+据我所知已经有至少三个开源（JuiceVm闭源）项目研究rv32ima linux模拟器的了，
+cnlohr/mini-rv32ima
+和Low-Speed-Linux-Experimental-Platform/temu
+还有juiceRv/JuiceVm。
+我也想研究，但目前没有头绪，虽然没什么用，
+但似乎可以节省买开发板的钱
+
+
+
+
+(IMP)
+linux-ch32v003_v4_good_no_systick.7z
+tvlad1234/linux-ch32v003研究，我暂时做了一个可以命令行输入的版本，不过不完美（还是没有实现真实的systick），
+不过即便没有systick可以用步进加1的方法模拟systick（我这里模拟器循环每步加5微秒），
+这样顺便也解决了大概率会没日志或内核panic的问题（原因不明，我加了模拟systick就没事了）。
+这个效果非常卡，输入一个字符要等几秒，执行ls也是会缓慢输出，有点类似uclinux那种每行输出卡顿一下的感觉，
+但卡顿得更厉害了
+==
+tvlad1234/linux-ch32v003研究，这个开源项目代码有点玄乎，我怀疑不同gcc可能也会影响实际的运行效果。
+我只有备份某个修改版本且尽在特定情况下才能跑出波浪线井号的正确效果
+（不确定条件；用MounRiver Studio编译，但系统嘀嗒为0所以无法输入），
+假如我进行代码微调，或者未知条件下，就会出现各种失败情况，例如没有日志，或者内核panic，
+但我找不到具体的规律在哪
+==
+tvlad1234/linux-ch32v003研究，现在可以勉强跑起来，从psram加载完内核镜像到第一行linux日志输出需要15秒，
+从psram加载完内核到出现命令行提示符（波浪线井号）需要5分钟，非常慢。
+之前的spi共用问题似乎可以通过面包板最邻近插孔解决（不要隔着空位接线）防止产生电阻干扰读写。
+暂时还没完全跑通，还差系统时钟的移植代码有问题，所以目前无法测试命令行输入
+（日志前面的秒数全是0是错的）
+==
+（TODO：接线方法未记录）
+CH32V003F4P6-R0-1v1 green board：
+右上GND<->WCHLinkE-GND
+右上第二列VCC<->WCHLinkE-3V3
+PD5(TX)<->WCHLinkE-RX
+PD6(RX)<->WCHLinkE-TX
+PD1(SWIO)<->WCHLinkE-SWDIO/TMS
+SD板子（Green board TF+SD==SD/TF Board V1.6.2 use TF）：
+PC0<->SD-/CS
+面包板（SOP8 ESP-PSRAM64H）：
+左下GND<->SD-GND<->ESP-PSRAM-4
+右上第一列VCC（避免电阻）<->SD-3.3V<->ESP-PSRAM-8
+PC7<->SD-MISO<->ESP-PSRAM-2
+PC6<->SD-MOSI<->ESP-PSRAM-5
+PC5<->SD-CLK<->ESP-PSRAM-6
+PD3<->ESP-PSRAM-1-/CS
+注意插面包板（例如三脚连在一起）不要隔孔位，尽量贴近孔位插线，
+以防止读写psram和tf卡数据有误
+==
+tvlad1234/linux-ch32v003研究，我大概总结出这样的规律：
+最好VCC供电脚是相邻的，
+例如引到面包板的VCC和引到WCH-LinkE的VCC的CH32V003F4P6-R0-1v1绿色板的VCC是相邻的，
+否则可能会导致启动失败（电阻干扰PSRAM读写？）。
+另外我测试过信泰微的蓝色TF转接板不能用（带AMS1117-3.3和一个14脚chip），
+但另一家的绿色SD/TF双用转接板和单tf转接板却可以，
+费解，可能明确标记3.3V的tf转接板比较可靠
+```
+
 
