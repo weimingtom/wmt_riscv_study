@@ -224,6 +224,7 @@ https://cdn.kernel.org/pub/linux/kernel/v6.x/
 * linux-6.8.tar.gz
 
 # spike --isa=rv64gcv, suggest to use ubuntu 22 or above   
+* (TODO) see also https://github.com/sifive/freedom-e-sdk  
 * ./riscv64-unknown-elf-gcc -march=rv64gcv -O2 -static -o hello2 hello.c    
 * spike --isa=rv64gcv pk hello2  
 * https://github.com/riscv-software-src/riscv-isa-sim  
@@ -521,8 +522,11 @@ https://github.com/enjoy-digital/litex/wiki
 * Computer Organization and Design RISC-V Edition, Edition 1  
 
 ## KianV  
-https://github.com/splinedrive/kianRiscV  
-https://github.com/splinedrive/kianRiscV/tree/master/archive/first_cpu  
-https://scrapbox.io/htkymtks/RISC-V  
-risc-v  
-https://github.com/renode/renode/tree/master  
+* https://github.com/splinedrive/kianRiscV  
+* https://github.com/splinedrive/kianRiscV/tree/master/archive/first_cpu  
+
+## RISC-V  
+* https://scrapbox.io/htkymtks/RISC-V  
+
+## renode  
+* https://github.com/renode/renode  
