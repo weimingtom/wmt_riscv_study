@@ -561,6 +561,17 @@ pk=bbl, like opensbi
 其实就是bbl，即Berkeley Boot Loader，
 就是说pk=bbl，对标于opensbi
 see https://github.com/michaeljclark/busybear-linux
+
+
+【搞linux的旺仔】:qemu上如何启动linux，并模拟出一块linux开发板的显示屏，在显示屏上运行图形化界面？
+https://www.bilibili.com/video/BV13u4y1o7v6/
+risc-v linux qemu
+
+https://github.com/michaeljclark/rv8
+RISC-V simulator for x86-64
+https://comparch.edu.cvut.cz/qtrvsim/app/
+https://github.com/cvut/qtrvsim
+qtrvsim
 ```
 
 ## FemtoRV  
@@ -579,4 +590,7 @@ https://riscv.org/technical/specifications/
 WebRISC-V
 https://github.com/Mariotti94/WebRISC-V
 https://webriscv.altervista.org
+
 ```
+
+
