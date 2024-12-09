@@ -589,6 +589,12 @@ ASMI
 一个mips IDE
 search baidupan, ASMI-master.zip
 https://download.csdn.net/download/weixin_42118423/18482921
+
+自制RISC-V处理器可视化运行Linux
+https://www.bilibili.com/video/BV1rt421h7WV
+https://github.com/LoveLonelyTime/Bergamot
+
+
 ```
 
 ## FemtoRV  
