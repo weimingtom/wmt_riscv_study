@@ -572,6 +572,23 @@ RISC-V simulator for x86-64
 https://comparch.edu.cvut.cz/qtrvsim/app/
 https://github.com/cvut/qtrvsim
 qtrvsim
+
+
+
+https://gitee.com/xiaowuzxc/SparrowRV?_from=gitee_search
+
+ch32 uclinux?
+https://github.com/tvlad1234/linux-ch32v003
+https://github.com/cnlohr/mini-rv32ima
+https://github.com/cnlohr/ch32v003fun
+https://github.com/tvlad1234/pico-rv32ima
+https://hackaday.com/2023/03/19/rp2040-runs-linux-through-risc-v-emulation/
+https://hackaday.com/2024/03/03/bring-linux-to-ch32v003-through-yes-risc-v-emulation/
+https://github.com/owlvisiontech/rv1109-rv1126
+ASMI
+一个mips IDE
+search baidupan, ASMI-master.zip
+https://download.csdn.net/download/weixin_42118423/18482921
 ```
 
 ## FemtoRV  
@@ -590,7 +607,6 @@ https://riscv.org/technical/specifications/
 WebRISC-V
 https://github.com/Mariotti94/WebRISC-V
 https://webriscv.altervista.org
-
 ```
 
 
