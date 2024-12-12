@@ -8,6 +8,22 @@ My RISC-V study
 * Ariane
 * Spike  
 
+## RISC-V体系结构编程与实践 (for rv64?)    
+* https://github.com/runninglinuxkernel/riscv_programming_practice  
+* https://github.com/runninglinuxkernel/NEMU  
+```
+BenOS这个项目，本来是另一本书的《ARM体系结构》的baremetal项目，可以运行在qemu和树莓派上，
+现在又被移植到RISC-V qemu和D1s开发板上，所以感觉有点像xv6的更简单版。。。
+不过可能它和xv6比会更简单一些，而且是渐进式开发。
+实际上gh上也有其他项目是用类似的方法，渐进地开发出一个OS，但不如xv6那么经典
+```
+* 《RISC-V体系结构编程与实践》书籍配套硬件DongshanPi-D1s 示例代码程序仓库地址。
+https://gitee.com/weidongshan/riscv_programming_practice  
+* https://github.com/OpenXiangShan/NEMU
+* https://github.com/NJU-ProjectN/nemu
+* https://github.com/runninglinuxkernel/BenOS
+* https://github.com/OpenXiangShan/XiangShan  
+
 ## tvlad1234/linux-ch32v003, 软件模拟器    
 * https://github.com/tvlad1234/linux-ch32v003  
 
