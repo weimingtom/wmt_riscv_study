@@ -456,6 +456,11 @@ Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 * Burn firmware/sipeed_tang_nano_20k.fs with Gowin programmer (GW2AR GW2AR-18C, I choose exFlash and then first option)  
 * Install python-3.7.8rc1-amd64.exe  
 * pip3 install litex (need to update pip3)
+* Create console.bat, and double click to enter cmd  
+```
+@set PATH=%PATH%;C:\Users\admin\AppData\Local\Programs\Python\Python37\Scripts
+@cmd
+```
 * litex_term --serial-boot --images ./image/boot.json COM4 (do not need --speed param)
 * Press an enter key     
 * Get litex> prompt
