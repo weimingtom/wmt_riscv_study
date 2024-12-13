@@ -452,7 +452,8 @@ Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 * https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU  
 
 ## TangNano20K run RISC-V rv32 Linux with TangNano-20K-example linux fs and Image  
-* https://github.com/sipeed/TangNano-20K-example/tree/main/linux  
+* https://github.com/sipeed/TangNano-20K-example/tree/main/linux
+* Burn firmware/sipeed_tang_nano_20k.fs with Gowin programmer (GW2AR GW2AR-18C, I choose exFlash and then first option)  
 * Install python-3.7.8rc1-amd64.exe  
 * pip3 install litex (need to update pip3)
 * litex_term --serial-boot --images ./image/boot.json COM4 (do not need --speed param)
