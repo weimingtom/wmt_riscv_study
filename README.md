@@ -517,6 +517,8 @@ litex_term的作用是串口命令行和串口烧录linux内核，所以其实�
 看到litex提示符后才敲命令serialboot去烧录，而不一定要立刻烧录，所以我去掉了--speed参数，仅保留--serial-boot --images参数，
 进入后回车看到绿色的litex提示符，然后执行serialboot，这样就可以看到下载进度条了。一共出现三次，
 大概需要10分钟时间，启动非常快，输入输出也不卡顿，可能比splinedrive/kianRiscV的版本还要流畅
+
+我测试过用sipeed/TangNano-20K-example的linux fs固件跑的litex-hub/linux-on-litex-vexriscv的Linux Image镜像是失败的
 ```
 
 ## Use linux-on-litex-vexriscv sim.py (not litex_sim) to run rv32 linux (cpu-type is vexriscv_smp), booting in about 30 minutes     
