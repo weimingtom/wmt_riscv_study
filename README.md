@@ -451,6 +451,68 @@ Gowin Programmer，配置，选External Flash Mode，下面第二项选第一个
 ```
 * https://github.com/enjoy-digital/litex/wiki/Load-Application-Code-To-CPU  
 
+## TangNano20K run RISC-V rv32 Linux with TangNano-20K-example linux fs and Image  
+* https://github.com/sipeed/TangNano-20K-example/tree/main/linux  
+* Install python-3.7.8rc1-amd64.exe  
+* pip3 install litex (need to update pip3)
+* litex_term --serial-boot --images ./image/boot.json COM4 (do not need --speed param)
+* Press an enter key     
+* Get litex> prompt
+* litex> serialboot (need about 10 minutes)  
+```
+D:\work_gw2a\linux>litex_term --serial-boot --images ./image/boot.json COM4
+
+
+litex> serialboot
+
+Booting from serial...
+Press Q or ESC to abort boot completely.
+sL5DdSMmkekro
+[LITEX-TERM] Received firmware download request from the device.
+[LITEX-TERM] Uploading ./image\Image to 0x40000000 (1818868 bytes)...
+[LITEX-TERM] Upload calibration... (inter-frame: 10.00us, length: 64)
+[LITEX-TERM] Upload complete (3.7KB/s).
+[LITEX-TERM] Uploading ./image\sipeed_tang_nano_20k.dtb to 0x40780000 (2115 bytes)...
+[LITEX-TERM] Upload calibration... (inter-frame: 10.00us, length: 64)
+[LITEX-TERM] Upload complete (3.6KB/s).
+[LITEX-TERM] Uploading ./image\opensbi.bin.tangnano20k to 0x407c0000 (49636 bytes)...
+[LITEX-TERM] Upload calibration... (inter-frame: 10.00us, length: 64)
+[LITEX-TERM] Upload complete (3.7KB/s).
+[LITEX-TERM] Booting the device.
+[LITEX-TERM] Done.
+Executing booted program at 0x407c0000
+
+--============= Liftoff! ===============--
+
+OpenSBI v0.8-2-ga9ce3ad
+...
+Platform Name       : LiteX / VexRiscv-SMP
+Platform Features   : timer,mfdeleg
+Platform HART Count : 8
+Boot HART ID        : 0
+Boot HART ISA       : rv32imas
+BOOT HART Features  : time
+BOOT HART PMP Count : 0
+Firmware Base       : 0x407c0000
+Firmware Size       : 120 KB
+Runtime SBI Version : 0.2
+
+MIDELEG : 0x00000222
+MEDELEG : 0x0000b101
+[    0.000000] Linux version 6.4.0-rc1+ (zjs@CL-A-00022) (riscv64-linux-gnu-gcc (Debian 12.2.0-13) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40) #10 Tue May 16 09:20:49 CST 2023
+...
+/ # uname -a
+Linux (none) 6.4.0-rc1+ #10 Tue May 16 09:20:49 CST 2023 riscv32 GNU/Linux
+```
+```
+我把sipeed的Tang Nano 20K开发板的litex linux例程（sipeed/TangNano-20K-example）跑通了。
+简单来说就是官方的教程可能有误（或者是它用的litex_term和我用pip3 install litex安装的litex_term不同）。
+litex_term的作用是串口命令行和串口烧录linux内核，所以其实可以在进入串口命令行（执行litex_term后需要多按一下回车）
+看到litex提示符后才敲命令serialboot去烧录，而不一定要立刻烧录，所以我去掉了--speed参数，仅保留--serial-boot --images参数，
+进入后回车看到绿色的litex提示符，然后执行serialboot，这样就可以看到下载进度条了。一共出现三次，
+大概需要10分钟时间，启动非常快，输入输出也不卡顿，可能比splinedrive/kianRiscV的版本还要流畅
+```
+
 ## Use linux-on-litex-vexriscv sim.py (not litex_sim) to run rv32 linux (cpu-type is vexriscv_smp), booting in about 30 minutes     
 * https://github.com/litex-hub/linux-on-litex-vexriscv/blob/master/sim.py  
 if use pip3 install litex and use litex_sim, I fail, so I use this way instead  
