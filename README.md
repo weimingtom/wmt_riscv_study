@@ -861,4 +861,13 @@ https://gitee.com/weimingtom2000/xv6-riscv-fpga
 
 ```
 
+## (not tested) HPMicro rv32 nommu linux, maybe hpm6800evk  
+* https://github.com/hpmicro/linux/blob/hpmicro/arch/riscv/configs/nommu_hpmicro_defconfig
+* CONFIG_PAGE_OFFSET=0x40000000
+* https://www.hpmicro.com/service-support/technical-articles/258
+* 基于OpenSBI的linux nommu实现
+* https://github.com/hpmicro/opensbi.git
+* https://github.com/hpmicro/hpm_opensbi_loader.git
+* https://github.com/hpmicro/buildroot.git
+* https://github.com/hpmicro/hpm_manufacturing_tool.git
 
