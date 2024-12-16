@@ -1,6 +1,9 @@
 # wmt_riscv_study
 My RISC-V study
 
+## TODO
+* see https://github.com/weimingtom/wmt_ai_study/blob/master/fpga_cpld_001.md  
+
 ## 基于RISC-V代理内核, spike pk  
 * https://gitee.com/hustos/riscv-pke  
 
@@ -35,6 +38,7 @@ https://gitee.com/weidongshan/riscv_programming_practice
 * https://github.com/asfdrwe/ASFRV32I  
 * 可以用iverilog运行的RV32I简单软核
 * (TODO) verilator ???  
+* https://qiita.com/asfdrwe/items/44e463cf60a99232fc22  
 
 ## tinyemu  
 * https://bellard.org/tinyemu/
