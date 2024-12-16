@@ -871,3 +871,11 @@ https://gitee.com/weimingtom2000/xv6-riscv-fpga
 * https://github.com/hpmicro/buildroot.git
 * https://github.com/hpmicro/hpm_manufacturing_tool.git
 
+## qemu 
+* https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-qemu.html
+```
+git clone https://github.com/qemu/qemu
+cd qemu
+git checkout v5.0.0
+./configure --target-list=riscv32-softmmu
+```
