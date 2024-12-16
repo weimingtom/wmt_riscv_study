@@ -414,7 +414,7 @@ export PATH=$PATH:$PWD/riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubun
 riscv64-unknown-elf-gcc-8.1.0-2019.01.0-x86_64-linux-ubuntu14.tar.gz  
 
 ## (Failed, TODO) RV32 version XV6  
-* xv6_failed.tar.gz
+* search rv32_xv6_build, xv6_failed.tar.gz  
 * rv32_xv6_build
 ```
 目前编译的rv32版的xv6均无法模拟运行，除了splinedrive_kianRiscV-master.zip
