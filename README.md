@@ -879,3 +879,7 @@ cd qemu
 git checkout v5.0.0
 ./configure --target-list=riscv32-softmmu
 ```
+
+## E203 RV32  
+* https://github.com/SI-RISCV/e200_opensource
+* HumingBird-GW2A.zip
