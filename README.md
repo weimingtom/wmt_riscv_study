@@ -884,3 +884,8 @@ git checkout v5.0.0
 * https://www.gowinsemi.com.cn/prodshow.aspx?TypeId=70&FId=t31:70:31#top  
 * https://github.com/SI-RISCV/e200_opensource
 * HumingBird-GW2A.zip
+
+## Building up a RISC-V Linux with Buildroot, rv32  
+* https://jborza.com/post/2020-04-08-riscv-environment/  
+* https://github.com/jborza/riscv-linux/tree/emuriscv-linux-4.15  
+* https://github.com/jborza/emuriscv/  
