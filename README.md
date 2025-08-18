@@ -871,6 +871,10 @@ https://gitee.com/weimingtom2000/xv6-riscv-fpga
 * https://github.com/hpmicro/buildroot.git
 * https://github.com/hpmicro/hpm_manufacturing_tool.git
 
+## (not tested) hpm6300evk, hpm6750evk2, hpm6800evk
+* https://github.com/hpmicro/buildroot/tree/hpmicro/board/hpmicro/hpm6300evk
+* https://github.com/hpmicro/buildroot/tree/hpmicro/board/hpmicro
+
 ## qemu 
 * https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-qemu.html
 ```
