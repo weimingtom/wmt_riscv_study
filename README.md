@@ -893,3 +893,10 @@ git checkout v5.0.0
 * https://jborza.com/post/2020-04-08-riscv-environment/  
 * https://github.com/jborza/riscv-linux/tree/emuriscv-linux-4.15  
 * https://github.com/jborza/emuriscv/  
+
+## 带你从零实现RISC-V CPU | RE-让数电再次伟大 #0  
+* https://www.bilibili.com/video/BV1AhNPzjEk5/  
+* 一个极其简易的RV32I_Zicsr指令集单核MCU，几乎所有用户级与特权级指令支持，仅运行机器模式。  
+* https://github.com/XuanTongYao/XT_RISC-V_Soc
+* lattice, LCMXO2-4000HC
+
