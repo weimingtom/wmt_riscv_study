@@ -900,3 +900,5 @@ git checkout v5.0.0
 * https://github.com/XuanTongYao/XT_RISC-V_Soc
 * lattice, LCMXO2-4000HC
 
+## baochip-1x  
+* https://github.com/baochip/baochip-1x
