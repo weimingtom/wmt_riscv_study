@@ -903,7 +903,7 @@ git checkout v5.0.0
 ## baochip-1x  
 * https://github.com/baochip/baochip-1x
 
-## 移植最小RISC-V软核到FPGA
+## ISE, 移植最小RISC-V软核到FPGA
 * https://www.bilibili.com/video/BV1VrLXzFEyK/
 ```
 https://liuliqiang.com/fpga/riscv_top.v
@@ -927,3 +927,5 @@ https://scala-sbt.org/download/
 https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases
 https://github.com/litex-hub/opensbi/tree/1.3.1-linux-on-litex-vexriscv
 ```
+* 基于FPGA的Linux系统LCD显示驱动
+* https://www.bilibili.com/video/BV1Zr3CzYEsM
