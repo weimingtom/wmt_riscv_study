@@ -902,3 +902,27 @@ git checkout v5.0.0
 
 ## baochip-1x  
 * https://github.com/baochip/baochip-1x
+
+## 移植最小RISC-V软核到FPGA
+* https://www.bilibili.com/video/BV1VrLXzFEyK/
+```
+https://liuliqiang.com/fpga/riscv_top.v
+https://liuliqiang.com/fpga/firmware_riscv.c
+https://liuliqiang.com/fpga/start_riscv.S
+https://liuliqiang.com/fpga/firmware_riscv.lds
+https://liuliqiang.com/fpga/Makefile_riscv
+https://liuliqiang.com/fpga/splitbin2hex.cpp
+https://github.com/olofk/serv
+https://github.com/ZipCPU/wbuart32
+https://github.com/YosysHQ/picorv32
+https://veripool.org/verilator
+```
+* 小容量FPGA运行Linux系统
+```
+https://github.com/litex-hub/linux-on-litex-vexriscv
+https://github.com/SpinalHDL/SpinalHDL
+https://adoptium.net/temurin/releases/?os=any&arch=any&version=17
+https://scala-sbt.org/download/
+https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases
+https://github.com/litex-hub/opensbi/tree/1.3.1-linux-on-litex-vexriscv
+```
