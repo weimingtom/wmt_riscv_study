@@ -903,7 +903,7 @@ git checkout v5.0.0
 ## baochip-1x  
 * https://github.com/baochip/baochip-1x
 
-## ISE, 移植最小RISC-V软核到FPGA
+## 移植最小RISC-V软核到FPGA, Quartus II 64-Bit, EP4CE6E22C8
 * https://www.bilibili.com/video/BV1VrLXzFEyK/
 ```
 https://liuliqiang.com/fpga/riscv_top.v
@@ -917,7 +917,7 @@ https://github.com/ZipCPU/wbuart32
 https://github.com/YosysHQ/picorv32
 https://veripool.org/verilator
 ```
-* 小容量FPGA运行Linux系统
+* 小容量FPGA运行Linux系统, ISE P.20131013, xc6slx16-2ftg256
 * https://www.bilibili.com/video/BV1vzK7z3Epu
 ```
 https://github.com/litex-hub/linux-on-litex-vexriscv
@@ -927,5 +927,5 @@ https://scala-sbt.org/download/
 https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases
 https://github.com/litex-hub/opensbi/tree/1.3.1-linux-on-litex-vexriscv
 ```
-* 基于FPGA的Linux系统LCD显示驱动
+* 基于FPGA的Linux系统LCD显示驱动, ISE P.20131013, xc6slx16-2ftg256(?)    
 * https://www.bilibili.com/video/BV1Zr3CzYEsM
