@@ -918,6 +918,7 @@ https://github.com/YosysHQ/picorv32
 https://veripool.org/verilator
 ```
 * 小容量FPGA运行Linux系统
+* https://www.bilibili.com/video/BV1vzK7z3Epu
 ```
 https://github.com/litex-hub/linux-on-litex-vexriscv
 https://github.com/SpinalHDL/SpinalHDL
